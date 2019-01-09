@@ -114,29 +114,29 @@ We recommend you to do the definitions of the components and the definitions of 
 3) We recommend that you **split your code**. If your components are getting big, feel free to create new files where you define some functions or some components. Then, import those components inside your main component.
    For example, if you have a component with three possible state: `"loading"`, `"error"` and `"success"`. If those three states are represented differently and it leads you to a lot of lines of code, you can create a component for each of these states and put them in separated files (i.e.: `loading.js`, `error.js` and `success.js`). Then, on your main component, you can call your components like this:
 
-   ````javascript
-   import React from "react"
-   import { Loading } from "./loading"
-   import { Error } from "./error"
-   import { Success } from "./success"
+   ```javascript
+   import React from "react";
+   import { Loading } from "./loading";
+   import { Error } from "./error";
+   import { Success } from "./success";
 
-    export class MyComp extends React.Component {
-      render(){
-         const dataState = this.props.dataState
-         if (dataState === "success") {
-           return <Success />
-         } else if (dataState === "loading") {
-           return <Loading />
-         } else if (dataState === "error") {
-           return <Error />
-         } else {
-           throw new Error("dataState is invalid")
-         }
-      }
+   export class MyComp extends React.Component {
+     render() {
+       const dataState = this.props.dataState;
+       if (dataState === "success") {
+         return <Success />;
+       } else if (dataState === "loading") {
+         return <Loading />;
+       } else if (dataState === "error") {
+         return <Error />;
+       } else {
+         throw new Error("dataState is invalid");
+       }
      }
-    ```
-    This way, the code is more "elegant" and easier to read. Moreover, you can create independent stories for the `Success` ,`Loading` and `Error` components.
-   ````
+   }
+   ```
+
+   This way, the code is more "elegant" and easier to read. Moreover, you can create independent stories for the `Success` ,`Loading` and `Error` components.
 
 ## Annexes
 
